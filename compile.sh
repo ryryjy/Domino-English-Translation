@@ -1,12 +1,10 @@
-VERSION_NUM="$(cat version.txt)"
-BUILD_DATE=$(date +'%Y%m%d%H%M%S')
 rm -rf _compile
 mkdir _compile
 cp -r _deploy/Domino143/* _compile
 cd _compile
 echo "[FILENAMES]
 Exe=    Domino.exe
-SaveAs= Domino_Translated_$BUILD_DATE.exe
+SaveAs= 143e.exe
 Log=    CON
 [COMMANDS]
 -delete  MENU,,
@@ -30,10 +28,6 @@ for file in ../240/*.bin.txt; do
 	f="$(basename -s .txt $file)"
 	python3 "../_deploy/parsecombo.py" pack $file 240/$f
 done
-sed -i '2s/.*/FILEVERSION 1,43,'$VERSION_NUM',0/' VersionInfo.rc
-sed -i '3s/.*/PRODUCTVERSION 1,43,'$VERSION_NUM',0/' VersionInfo.rc
-sed -i '12s/.*/		VALUE "FileVersion", "1.43-en.'$VERSION_NUM'-dev.'$BUILD_DATE'"/' VersionInfo.rc
-sed -i '17s/.*/		VALUE "ProductVersion", "1.43-en.'$VERSION_NUM'-dev.'$BUILD_DATE'"/' VersionInfo.rc
 echo '"C:\Program Files (x86)\Resource Hacker\ResourceHacker.exe" -open Dialog.rc -save Dialog.res -action compile -log CON
 "C:\Program Files (x86)\Resource Hacker\ResourceHacker.exe" -open Menu.rc -save Menu.res -action compile -log CON
 "C:\Program Files (x86)\Resource Hacker\ResourceHacker.exe" -open StringTable.rc -save StringTable.res -action compile -log CON
@@ -41,10 +35,12 @@ echo '"C:\Program Files (x86)\Resource Hacker\ResourceHacker.exe" -open Dialog.r
 cd 240
 "C:\Program Files (x86)\Resource Hacker\ResourceHacker.exe" -open _240.rc -save ../240.res -action compile -log CON
 cd..
-"C:\Program Files (x86)\Resource Hacker\ResourceHacker.exe" -script tmp.txt' > tmp.bat
-cmd.exe /c tmp.bat
-touch Domino_Translated_$BUILD_DATE.exe
+"C:\Program Files (x86)\Resource Hacker\ResourceHacker.exe" -script tmp.txt
+' > tmp.bat
+cmd "/c tmp.bat"
+touch 143e.exe
 rm -rf Manual
+rm -rf Domino.exe
 cp -r ../Manual .
 cp -r ../Module .
 cp -r ../System .
