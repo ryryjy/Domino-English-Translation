@@ -3,10 +3,9 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 { 
   1008, 	"Navigates between marked measures. You may also modify or delete labels by right-clicking on it."
   1009, 	"Direct Input Mode"
-  1010, 	"Shows the current CC Macro target selection for the Graph Panel 1. Right-click to directly input a specific CC Macro.\nControl Change Macro (EGP 1)"
-  1011, 	"Shows the current CC Macro target selection for the Graph Panel 2. Right-click to directly input a specific CC Macro.\nControl Change Macro (EGP 2)"
-  			//(bruh, no EGP 3. epic prank by takabo)
-  1012, 	"Shows the current CC Macro target selection for the Graph Panel 3. Right-click to directly input a specific CC Macro.\nControl Change Macro (EGP 3)"
+  1010, 	"Shows the current CC Macro target selection for the Graph Panel 1. Right-click to directly input a specific CC Macro.\nControl Change Macro Tree (Graph Panel 1)"
+  1011, 	"Shows the current CC Macro target selection for the Graph Panel 2. Right-click to directly input a specific CC Macro.\nControl Change Macro Tree (Graph Panel 2)"
+  1012, 	"Shows the current CC Macro target selection for the Graph Panel 3. Right-click to directly input a specific CC Macro.\nControl Change Macro Tree (Graph Panel 3)"
   1013, 	"cc 0"
   1014, 	"cc 1"
   1015, 	"cc 2"
